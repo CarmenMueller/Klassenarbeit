@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografie-Website</title>
+    <style>
+        /* Flexbox für das Desktop-Layout */
+
+        body {
+            display: grid;
+                grid-template-columns: 1fr 700px 260px 1fr;
+                grid-template-rows: auto 40px 1fr auto;
+                grid-template-areas: 
+                    ". g-header g-header ."
+                    ". g-nav g-nav."
+                    ". g-main g-aside."
+                    ". g-footer g-footer.";
+                    height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            grid-area: g-header;
+        }
+        footer {
+            display: flex;
+align-items: center;
+justify-content: space-between;
+            background-color: #333;
+            color: #ffffff;
+            grid-area: g-footer;
+            font-size: 10pt;
+            padding: 0px 10px 0px 10px;
+        }
+        nav {
+            display: flex;
+        align-items: center;
+            background-color: #444;
+            text-align: center;
+            grid-area: g-nav;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px 10px 20px;
+        }
+
+        nav a:hover { 
+            background-color: #b2afaf;
+
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+            grid-area: g-main;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+        aside {
+            padding: 20px;
+            grid-area: g-aside;
+            background-color:#b2afaf;
+        }
+
+        img {
+            padding: 10px;
+        }
+    
+
+        /* Grid-Layout für Tablet-Ansicht */
+        @media (max-width: 700px) {
+            body {
+                display: grid;
+                grid-template-columns: 1fr 260px;
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-areas: 
+                "g-header g-header"
+                    "g-nav g-nav"
+                    "g-main g-aside"
+                    "g-footer g-footer";
+            }
+        }
+
+        /* Grid-Layout für Smartphone-Ansicht */
+        @media (max-width: 500px) {
+            body {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-areas: 
+                    "g-header"
+                    "g-nav"
+                    "g-main"
+                    "g-aside"
+                    "g-footer";
+            }
+            nav {
+                flex-direction: column;
+            }
+            footer {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <h1>Willkommen auf unserer Fotografie-Website</h1>
+        </header>
+        <nav>
+            <a href="#">Startseite</a>
+            <a href="#">Galerie</a>
+            <a href="#">Über uns</a>
+            <a href="#">Kontakt</a>
+        </nav>
+        <main>
+            <h2>Entdecken Sie die Welt der Fotografie</h2>
+            <p>Willkommen auf unserer Website. Hier finden Sie inspirierende Fotografien und Tipps zur Fotografie.</p>
+            <section>
+                <img src="images/Bild1.jpg" width="180">
+            <img src="images/Bild2.jpg" width="180">
+           <img src="images/Bild3.jpg" width="180">
+           <img src="images/Bild4.jpg" width="180">
+            <img src="images/Bild5.jpg" width="180">
+            <img src="images/Bild6.jpg" width="180">
+            </section>
+        </main>
+        <aside>
+            <p>Tipps zur Fotografie:</p>
+            <ul>
+                <li>Beherrsche die Grundlagen der Belichtung</li>
+                <li>Achte auf die Komposition</li>
+                <li>Nutze das vorhandene Licht</li>
+                <li>Entwickle einen Blick für Details</li>
+                <li>Übe und experimentiere</li>
+                <li>Betrachte die Arbeit anderer Fotografen</li>
+            </ul>
+        </aside>
+        <footer>
+            &copy; 2024 Fotografie-Website. Alle Rechte vorbehalten.
+            <a href="#">Impressum</a>
+            <img src="images/instagram_icon.png" width="30" align=left>
+        </footer>
+</body>
+</html>
